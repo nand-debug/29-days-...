@@ -1,0 +1,69 @@
+/* ==========================================================================
+   ANIMATIONS — cross-screen transitions & shared utility keyframes
+   ========================================================================== */
+
+/* Cinematic cross-fade + gentle rise when moving between screens */
+.screen {
+  animation: screen-in var(--dur-slow) var(--ease-page) both;
+}
+
+@keyframes screen-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.screen--leaving {
+  animation: screen-out var(--dur-med) var(--ease-page) both;
+}
+
+@keyframes screen-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(-10px) scale(0.985); }
+}
+
+/* Gold shimmer sweep, used sparingly on the "today" label and title accents */
+.shimmer {
+  background: linear-gradient(100deg, var(--gold-500) 30%, var(--gold-300) 45%, var(--gold-500) 60%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer-sweep 4.5s ease-in-out infinite;
+}
+
+@keyframes shimmer-sweep {
+  0%   { background-position: 0% 0; }
+  100% { background-position: -220% 0; }
+}
+
+/* Fade-up reveal for content entering the paper */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: rise-fade var(--dur-med) var(--ease-silk) forwards;
+}
+.reveal--delay-1 { animation-delay: 90ms; }
+.reveal--delay-2 { animation-delay: 180ms; }
+
+/* Toast used for locked-day taps */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: var(--space-lg);
+  transform: translate(-50%, 12px);
+  background: var(--midnight-700);
+  color: var(--parchment-100);
+  border: 1px solid rgba(201,162,75,0.35);
+  padding: 0.8em 1.4em;
+  border-radius: 999px;
+  font-size: var(--step--1);
+  box-shadow: var(--shadow-card);
+  z-index: 60;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-fast) var(--ease-silk), transform var(--dur-fast) var(--ease-silk);
+}
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}

@@ -1,0 +1,93 @@
+/* ==========================================================================
+   DESIGN TOKENS — "29 Days Until You"
+   ==========================================================================
+   A private, hand-bound storybook, not a product.
+
+   PALETTE
+   -midnight-900   #10192E  deep night sky — base background
+   -midnight-700   #1B2A45  lighter night, cards/panels on dark
+   -parchment-100  #F6EFE2  letter paper, warm cream
+   -parchment-200  #EDE2CC  aged paper shadow / secondary paper
+   -gold-500       #C9A24B  foil accent, wax seal thread, light
+   -gold-300       #E4C978  bright candle glow
+   -burgundy-600   #6E2436  wax seal, deep accent
+   -emerald-600    #1F4A3E  secondary accent, locked state
+
+   TYPE
+   display   "Cormorant Garamond"  — titles, headings, ceremonial
+   hand      "Caveat"              — letters, personal notes
+   ui        "Jost"                — chrome, labels, captions, buttons
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Color */
+  --midnight-900: #10192E;
+  --midnight-800: #16233C;
+  --midnight-700: #1B2A45;
+  --midnight-600: #24365650;
+
+  --parchment-100: #F6EFE2;
+  --parchment-200: #EDE2CC;
+  --parchment-300: #E2D3B0;
+
+  --gold-300: #E4C978;
+  --gold-500: #C9A24B;
+  --gold-700: #93732F;
+
+  --burgundy-500: #832C41;
+  --burgundy-600: #6E2436;
+  --burgundy-700: #501A28;
+
+  --emerald-500: #2A5C4C;
+  --emerald-600: #1F4A3E;
+  --emerald-700: #163A30;
+
+  --ink: #14203A;
+  --ink-soft: rgba(20, 32, 58, 0.7);
+  --paper-shadow: rgba(48, 34, 12, 0.28);
+
+  /* Type */
+  --font-display: "Cormorant Garamond", "Iowan Old Style", serif;
+  --font-hand: "Caveat", "Segoe Script", cursive;
+  --font-ui: "Jost", "Segoe UI", sans-serif;
+
+  /* Scale */
+  --step--1: clamp(0.78rem, 0.74rem + 0.2vw, 0.88rem);
+  --step-0:  clamp(1rem, 0.94rem + 0.3vw, 1.125rem);
+  --step-1:  clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --step-2:  clamp(1.6rem, 1.4rem + 1vw, 2.1rem);
+  --step-3:  clamp(2.1rem, 1.7rem + 2vw, 3.1rem);
+  --step-4:  clamp(2.8rem, 2.1rem + 3.4vw, 4.6rem);
+
+  /* Rhythm */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.75rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+
+  /* Motion */
+  --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-page: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 240ms;
+  --dur-med: 560ms;
+  --dur-slow: 1100ms;
+
+  /* Elevation / texture */
+  --seal-size: 3.4rem;
+  --radius-paper: 3px 14px 3px 14px;
+  --radius-soft: 10px;
+
+  --shadow-card: 0 18px 40px -14px rgba(6, 10, 20, 0.55);
+  --shadow-glow-gold: 0 0 22px rgba(228, 201, 120, 0.55);
+  --shadow-glow-soft: 0 0 60px rgba(201, 162, 75, 0.18);
+}
+
+/* Reduced motion users get the same story, told more quietly */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur-med: 1ms;
+    --dur-slow: 1ms;
+  }
+}

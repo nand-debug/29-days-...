@@ -1,0 +1,248 @@
+/* ==========================================================================
+   CALENDAR — "The Path of 29 Nights"
+   A hand-strung garland of sealed letters winding down the page, rather
+   than a grid of tiles. Position is computed in js/path.js and applied
+   as inline custom properties (--x / --y) per node.
+   ========================================================================== */
+
+.calendar {
+  padding: var(--space-xl) 0 var(--space-xl);
+  background:
+    radial-gradient(ellipse 80% 30% at 50% 0%, rgba(201,162,75,0.08), transparent 60%),
+    linear-gradient(180deg, #0B1122 0%, var(--midnight-900) 8%, var(--midnight-800) 92%, #0B1122 100%);
+}
+
+.calendar__header {
+  text-align: center;
+  max-width: 46ch;
+  margin: 0 auto var(--space-lg);
+  padding: 0 var(--space-md);
+}
+
+.calendar__title {
+  font-size: var(--step-3);
+  margin-top: var(--space-xs);
+}
+
+.calendar__title .accent { color: var(--gold-300); font-style: italic; }
+
+.calendar__subtitle {
+  font-family: var(--font-hand);
+  font-size: clamp(1.15rem, 1rem + 0.8vw, 1.5rem);
+  color: var(--parchment-200);
+}
+
+.calendar__progress {
+  margin-top: var(--space-sm);
+  font-size: var(--step--1);
+  color: var(--gold-500);
+  letter-spacing: 0.06em;
+}
+
+/* Track: the SVG thread drawn behind all nodes */
+.path-track {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.path-track__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: visible;
+}
+
+.path-track__line {
+  fill: none;
+  stroke: url(#thread-gradient);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 7;
+  stroke-linecap: round;
+  opacity: 0.55;
+}
+
+.path-track__line--lit {
+  stroke: var(--gold-300);
+  stroke-dasharray: none;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 5px rgba(228,201,120,0.6));
+}
+
+/* Node wrapper positioned along the path */
+.day-node {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* The envelope itself */
+.envelope {
+  position: relative;
+  width: 84px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-soft);
+  background: linear-gradient(160deg, var(--parchment-100), var(--parchment-300));
+  box-shadow: var(--shadow-card);
+  transition: transform var(--dur-fast) var(--ease-silk), box-shadow var(--dur-fast);
+  transform-origin: center;
+}
+
+.envelope::before {
+  /* envelope flap */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--parchment-200), var(--parchment-300));
+  clip-path: polygon(0 0, 100% 0, 50% 55%);
+  border-radius: var(--radius-soft) var(--radius-soft) 0 0;
+}
+
+.envelope__seal {
+  position: relative;
+  z-index: 1;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 35% 30%, var(--burgundy-500), var(--burgundy-700));
+  color: var(--gold-300);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.35), 0 3px 6px rgba(0,0,0,0.4);
+}
+
+/* Day button wraps envelope + label */
+.day-node__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.day-node__label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--parchment-200);
+  opacity: 0.75;
+}
+
+/* --- STATE: unlocked, not yet opened (glows softly, inviting) --- */
+.day-node--unlocked .envelope {
+  box-shadow: var(--shadow-card), var(--shadow-glow-soft);
+}
+.day-node--unlocked .envelope:hover,
+.day-node--unlocked .day-node__btn:focus-visible .envelope {
+  transform: translateY(-4px) rotate(-1deg) scale(1.04);
+  box-shadow: var(--shadow-card), var(--shadow-glow-gold);
+}
+
+/* --- STATE: today (the current chapter — brightest, breathing gently) --- */
+.day-node--today .envelope {
+  background: linear-gradient(160deg, var(--gold-300), var(--gold-500));
+  box-shadow: 0 0 0 3px rgba(228,201,120,0.25), var(--shadow-card), var(--shadow-glow-gold);
+  animation: breathe 3.2s ease-in-out infinite;
+}
+.day-node--today .envelope::before {
+  background: linear-gradient(160deg, var(--gold-300), var(--gold-500));
+}
+.day-node--today .envelope__seal {
+  background: radial-gradient(circle at 35% 30%, var(--parchment-100), var(--parchment-300));
+  color: var(--burgundy-600);
+}
+.day-node--today .day-node__label { color: var(--gold-300); opacity: 1; }
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.045); }
+}
+
+/* --- STATE: opened (read) — settled, quiet, marked complete --- */
+.day-node--opened .envelope {
+  background: linear-gradient(160deg, var(--parchment-200), var(--parchment-300));
+  opacity: 0.88;
+}
+.day-node--opened .envelope::before { opacity: 0.6; }
+.day-node--opened .envelope__seal {
+  background: radial-gradient(circle at 35% 30%, var(--emerald-500), var(--emerald-700));
+}
+.day-node--opened .envelope::after {
+  content: "";
+  position: absolute;
+  bottom: -4px; right: -4px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--emerald-500);
+  border: 2px solid var(--midnight-900);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F6EFE2' stroke-width='3'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* --- STATE: locked — dim, sealed shut, quietly waiting --- */
+.day-node--locked .envelope {
+  background: linear-gradient(160deg, var(--midnight-700), var(--midnight-800));
+  box-shadow: inset 0 0 0 1px rgba(201,162,75,0.12);
+  filter: saturate(0.6);
+}
+.day-node--locked .envelope::before {
+  background: linear-gradient(160deg, var(--midnight-700), var(--midnight-800));
+}
+.day-node--locked .envelope__seal {
+  background: radial-gradient(circle at 35% 30%, #2b3652, #1b2438);
+  color: rgba(228, 201, 120, 0.35);
+}
+.day-node--locked .day-node__label { opacity: 0.35; }
+.day-node--locked .day-node__btn { cursor: not-allowed; }
+.day-node--locked .envelope:hover { transform: none; box-shadow: inset 0 0 0 1px rgba(201,162,75,0.12); }
+
+.day-node--locked .lock-icon {
+  position: absolute;
+  bottom: -3px; right: -3px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--midnight-900);
+  border: 1px solid rgba(201,162,75,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.day-node--locked .lock-icon svg { width: 10px; height: 10px; fill: var(--gold-500); }
+
+/* Legend beneath the garland */
+.calendar__legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  margin: var(--space-lg) auto 0;
+  padding: 0 var(--space-md);
+  max-width: 640px;
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+.calendar__legend li { display: flex; align-items: center; gap: 8px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.legend-dot--today { background: var(--gold-300); box-shadow: var(--shadow-glow-gold); }
+.legend-dot--opened { background: var(--emerald-500); }
+.legend-dot--locked { background: var(--midnight-700); border: 1px solid rgba(201,162,75,0.3); }
+
+/* Desktop: widen the amplitude of the garland's sway */
+@media (min-width: 720px) {
+  .path-track { max-width: 780px; }
+  .envelope { width: 96px; height: 74px; }
+}

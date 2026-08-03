@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>29 Days Until You</title>
+  <meta name="description" content="A private countdown of letters, for one very specific reader.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Fonts: Cormorant Garamond (display), Caveat (handwritten), Jost (UI) — all free, Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Caveat:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles, loaded in cascade order -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/calendar.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/templates.css">
+</head>
+<body>
+
+  <!-- Ambient particle field, behind everything -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- Background music toggle, present on every screen -->
+  <button class="sound-toggle" type="button" data-sound-toggle hidden aria-pressed="false">
+    <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4zm11.5 3a4.5 4.5 0 0 0-2.5-4.03v8.06A4.5 4.5 0 0 0 15.5 12zM13 3.23v2.06A7 7 0 0 1 13 18.71v2.06A9 9 0 0 0 13 3.23z"/></svg>
+  </button>
+
+  <main id="app">
+
+    <!-- ============================= LANDING ============================= -->
+    <section class="screen landing" id="landing-screen">
+      <div class="landing__stars" aria-hidden="true"></div>
+
+      <div class="landing__parallax" id="landing-parallax">
+        <span class="landing__eyebrow eyebrow" data-landing-meta>A private letter, for your eyes only</span>
+        <div class="landing__rule" aria-hidden="true"></div>
+        <h1 class="landing__title" data-site-title>29 Days Until <em>You</em></h1>
+        <p class="landing__subtitle" data-landing-subtitle>
+          Twenty-nine little doors, one for every day between now and the day you were born.
+        </p>
+      </div>
+
+      <button class="landing__enter" id="enter-btn" type="button">Begin</button>
+      <p class="landing__hint">Best opened somewhere quiet, with the sound on.</p>
+    </section>
+
+    <!-- ============================= CALENDAR ============================= -->
+    <section class="screen calendar" id="calendar-screen" hidden>
+      <header class="calendar__header">
+        <span class="eyebrow">The Path of 29 Nights</span>
+        <h2 class="calendar__title">Twenty-Nine <span class="accent">Letters</span></h2>
+        <p class="calendar__subtitle">Follow the thread. Open one a day.</p>
+        <p class="calendar__progress" id="calendar-progress" aria-live="polite"></p>
+      </header>
+
+      <div class="path-track" id="path-track" role="list" aria-label="29 days of letters">
+        <!-- Envelopes injected here by js/calendar.js -->
+      </div>
+
+      <ul class="calendar__legend" aria-hidden="true">
+        <li><span class="legend-dot legend-dot--today"></span> Today</li>
+        <li><span class="legend-dot legend-dot--opened"></span> Opened</li>
+        <li><span class="legend-dot legend-dot--locked"></span> Not yet</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============================= SCRIPTS ============================= -->
+  <!-- Data first: everything else reads from window.CONFIG / window.DAYS -->
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/audioPlayer.js"></script>
+  <script src="js/path.js"></script>
+  <script src="js/templates.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

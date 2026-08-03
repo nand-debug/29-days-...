@@ -1,0 +1,202 @@
+/* ==========================================================================
+   TEMPLATES — one layout per content type, so no two days feel alike
+   ========================================================================== */
+
+/* ---------- LETTER: handwritten note, generous line-height, drop cap ---------- */
+.tpl-letter__text {
+  font-family: var(--font-hand);
+  font-size: clamp(1.25rem, 1.05rem + 1vw, 1.65rem);
+  line-height: 1.7;
+  color: var(--ink);
+}
+.tpl-letter__text p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 2.6em;
+  float: left;
+  line-height: 0.8;
+  padding: 0.05em 0.08em 0 0;
+  color: var(--burgundy-600);
+}
+.tpl-letter__sign {
+  margin-top: var(--space-md);
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  color: var(--burgundy-600);
+  text-align: right;
+}
+
+/* ---------- PHOTO: a single framed print, tilted like a kept polaroid ---------- */
+.tpl-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.tpl-photo__frame {
+  background: var(--parchment-100);
+  padding: 10px 10px 34px;
+  box-shadow: 0 16px 34px -12px rgba(0,0,0,0.4);
+  transform: rotate(-2deg);
+  max-width: 320px;
+}
+.tpl-photo__frame img {
+  width: 100%;
+  border-radius: 2px;
+  filter: sepia(0.12) saturate(1.05);
+}
+.tpl-photo__caption {
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* ---------- GALLERY: scattered small prints, like a spilled envelope ---------- */
+.tpl-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+  padding: var(--space-sm) 0;
+}
+.tpl-gallery__item {
+  background: var(--parchment-100);
+  padding: 8px 8px 24px;
+  width: 42%;
+  min-width: 130px;
+  box-shadow: 0 12px 26px -10px rgba(0,0,0,0.35);
+}
+.tpl-gallery__item:nth-child(odd) { transform: rotate(-3deg); }
+.tpl-gallery__item:nth-child(even) { transform: rotate(2.5deg); }
+.tpl-gallery__item img { width: 100%; border-radius: 2px; }
+.tpl-gallery__item span {
+  display: block;
+  text-align: center;
+  font-family: var(--font-hand);
+  font-size: 1rem;
+  color: var(--ink-soft);
+  margin-top: 6px;
+}
+
+/* ---------- AUDIO: a voice note, with a soft waveform silhouette ---------- */
+.tpl-audio {
+  text-align: center;
+}
+.tpl-audio__waveform {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  height: 48px;
+  margin: var(--space-sm) 0;
+}
+.tpl-audio__waveform span {
+  width: 4px;
+  border-radius: 2px;
+  background: var(--burgundy-500);
+  opacity: 0.55;
+  animation: sway 1.8s ease-in-out infinite;
+}
+@keyframes sway {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+.tpl-audio audio {
+  width: 100%;
+  margin-top: var(--space-sm);
+  accent-color: var(--burgundy-600);
+}
+
+/* ---------- VIDEO: a small viewfinder, like a projected home film ---------- */
+.tpl-video__frame {
+  position: relative;
+  border-radius: var(--radius-soft);
+  overflow: hidden;
+  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.5);
+  border: 6px solid var(--parchment-100);
+}
+.tpl-video__frame video { width: 100%; display: block; }
+
+/* ---------- QUOTE: a single line, isolated and large ---------- */
+.tpl-quote {
+  text-align: center;
+  padding: var(--space-lg) 0;
+}
+.tpl-quote__mark {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--gold-700);
+  line-height: 0.4;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+.tpl-quote__text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.4rem, 1.1rem + 1.6vw, 2.1rem);
+  color: var(--ink);
+}
+.tpl-quote__attr {
+  margin-top: var(--space-md);
+  font-family: var(--font-ui);
+  font-size: var(--step--1);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--burgundy-600);
+}
+
+/* ---------- LIST: a tally / reasons-why, numbered like a ledger ---------- */
+.tpl-list__intro {
+  font-family: var(--font-hand);
+  font-size: 1.4rem;
+  color: var(--burgundy-600);
+  margin-bottom: var(--space-md);
+}
+.tpl-list ol {
+  list-style: none;
+  counter-reset: reasons;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.tpl-list li {
+  counter-increment: reasons;
+  position: relative;
+  padding-left: 2.4em;
+  font-size: var(--step-0);
+}
+.tpl-list li::before {
+  content: counter(reasons, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--gold-700);
+}
+
+/* ---------- MIXED: letter + small photo side note, like a folded insert ---------- */
+.tpl-mixed { display: flex; flex-direction: column; gap: var(--space-md); }
+.tpl-mixed__insert {
+  align-self: flex-end;
+  background: var(--parchment-100);
+  padding: 6px 6px 20px;
+  width: 46%;
+  max-width: 200px;
+  box-shadow: 0 10px 22px -10px rgba(0,0,0,0.35);
+  transform: rotate(3deg);
+}
+.tpl-mixed__insert img { width: 100%; }
+.tpl-mixed__insert span {
+  display: block;
+  text-align: center;
+  font-family: var(--font-hand);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 600px) {
+  .tpl-mixed { flex-direction: row-reverse; align-items: flex-start; }
+  .tpl-mixed__insert { width: 40%; }
+  .tpl-mixed__text { flex: 1; }
+}

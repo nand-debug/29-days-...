@@ -1,0 +1,147 @@
+/* ==========================================================================
+   MODAL — the moment an envelope opens
+   ========================================================================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+  background: rgba(8, 11, 20, 0.72);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-med) var(--ease-page);
+}
+
+.overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* The envelope-opening flap animation, shown briefly before the paper */
+.overlay__flap {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.overlay__flap-shape {
+  width: min(70vw, 320px);
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(160deg, var(--parchment-100), var(--parchment-300));
+  border-radius: var(--radius-soft);
+  transform: scale(0.4) rotateX(0deg);
+  opacity: 0;
+  box-shadow: var(--shadow-card);
+}
+
+.overlay.is-active .overlay__flap-shape {
+  animation: unfold-letter var(--dur-slow) var(--ease-page) forwards;
+}
+
+@keyframes unfold-letter {
+  0%   { opacity: 0; transform: scale(0.35) rotateX(40deg); }
+  40%  { opacity: 1; transform: scale(0.9) rotateX(0deg); }
+  70%  { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0; transform: scale(1.35); }
+}
+
+/* The paper "page" itself */
+.paper {
+  position: relative;
+  width: min(640px, 100%);
+  background: linear-gradient(170deg, var(--parchment-100), var(--parchment-200));
+  color: var(--ink);
+  border-radius: var(--radius-paper);
+  box-shadow: 0 30px 70px -20px rgba(0,0,0,0.6);
+  padding: var(--space-lg) var(--space-md);
+  transform: translateY(28px) scale(0.97);
+  opacity: 0;
+  transition: transform var(--dur-med) var(--ease-silk) 260ms, opacity var(--dur-med) var(--ease-silk) 260ms;
+}
+
+.overlay.is-active .paper {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Subtle paper fiber texture, layered so it never repeats obviously */
+.paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(110,36,54,0.02) 0 1px, transparent 1px 90px),
+    repeating-linear-gradient(0deg, rgba(110,36,54,0.02) 0 1px, transparent 1px 90px);
+  pointer-events: none;
+}
+
+.paper__close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--burgundy-600);
+  background: rgba(110,36,54,0.08);
+  transition: background var(--dur-fast), transform var(--dur-fast);
+}
+.paper__close:hover { background: rgba(110,36,54,0.16); transform: rotate(90deg); }
+.paper__close svg { width: 16px; height: 16px; stroke: currentColor; }
+
+.paper__eyebrow {
+  font-size: var(--step--1);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--burgundy-600);
+}
+
+.paper__title {
+  font-size: var(--step-2);
+  color: var(--ink);
+  margin-bottom: var(--space-sm);
+}
+
+.paper__body {
+  font-size: var(--step-0);
+}
+
+/* Nav between days inside the paper */
+.paper__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(110,36,54,0.15);
+}
+
+.paper__nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--burgundy-600);
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: background var(--dur-fast);
+}
+.paper__nav-btn:hover:not(:disabled) { background: rgba(110,36,54,0.08); }
+.paper__nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.paper__nav-btn svg { width: 14px; height: 14px; }
