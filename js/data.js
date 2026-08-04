@@ -82,15 +82,15 @@ const DAYS = [
       "The way you care about me in a way no one ever has. You make me feel understood, supported, and loved.",
     ]
   },
-  {
+    {
     day: 5,
-    type: "letter",
-    title: "A Small Confession",
-    body: [
-      "I rehearse conversations with you in the shower. I plan surprises weeks in advance and then almost ruin them because I'm impatient to see your face.",
-      "None of that has ever felt like effort. It's felt like the easiest thing I do all day."
-    ],
-    signature: "— guilty as charged"
+type: "letter",
+title: "A Small Confession",
+body: [
+  "I don't think I'll ever stop getting excited to see you. Even if it's just one more day until we meet, I'll probably be counting the hours like a little kid waiting for Christmas.",
+  "You make me want to do the little things—plan surprises, write silly letters like these, and find new ways to remind you how much I love you. Somehow, loving you has always been the best thing I've ever done."
+],
+signature: "— forever excited to see you ❤️"
   },
   {
     day: 6,
