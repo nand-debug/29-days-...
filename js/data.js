@@ -96,19 +96,18 @@ signature: "— always you ❤️"
   },
   {
     day: 6,
-    type: "audio",
-    audioSrc: "assets/audio/day-06-voice-note.mp3",
-    note: "A voice note, recorded at an hour I should've been asleep."
-  },
+body: [
+  "Every time I look at this photo, I find myself smiling without even realising it.",
+  "It was one of those simple days that didn't need anything extraordinary to become unforgettable. We laughed, talked, walked around together, and somehow made one of my favourite memories. If I could relive one ordinary day with you, I think I'd quietly choose this one."
+],
+signature: "— one of my favourite memories ❤️",
+image: "assets/images/day-06-insert.jpg",
+imageCaption: "a day I'll never forget"
   {
     day: 7,
-    type: "mixed",
-    body: [
-      "One week down. I keep this photo close because it's the version of us that started everything — before either of us had said anything out loud."
-    ],
-    signature: "— still that nervous",
-    image: "assets/images/day-07-insert.jpg",
-    imageCaption: "the day before I found the courage"
+    type: "audio",
+    audioSrc: "assets/audio/day-07-voice-note.mp3",
+    note: "A voice note, recorded at an hour I should've been asleep."
   },
   {
     day: 8,
