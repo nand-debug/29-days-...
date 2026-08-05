@@ -87,11 +87,10 @@ const DAYS = [
 type: "letter",
 title: "A Small Confession",
 body: [
-  "Sometimes I wonder if you know just how much space you take up in my heart.,
-"You're in the little moments I don't even think about anymore. When something funny happens, you're the first person I want to tell. When I hear a song I like, I wonder if you'd like it too. When I see something cute, I already know you're going to be the reason I smile.,
-"I don't think loving you has ever felt like a choice. It happened so naturally that now it's become a part of who I am. Making you smile, planning little surprises, writing things like this... none of it has ever felt like effort.,
+  "Sometimes I wonder if you know just how much space you take up in my heart.",
+"You're in the little moments I don't even think about anymore. When something funny happens, you're the first person I want to tell. When I hear a song I like, I wonder if you'd like it too. When I see something cute, I already know you're going to be the reason I smile.",
+"I don't think loving you has ever felt like a choice. It happened so naturally that now it's become a part of who I am. Making you smile, planning little surprises, writing things like this... none of it has ever felt like effort.",
 "Because at the end of the day, if it has your smile waiting on the other side, I'd do it all over again without thinking twice."
-
 ],
 signature: "— always you ❤️"
   },
