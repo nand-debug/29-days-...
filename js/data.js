@@ -96,6 +96,7 @@ signature: "— always you ❤️"
   },
   {
     day: 6,
+     type: "mixed",
 body: [
   "Every time I look at this photo, I find myself smiling without even realising it.",
   "It was one of those simple days that didn't need anything extraordinary to become unforgettable. We laughed, talked, walked around together, and somehow made one of my favourite memories. If I could relive one ordinary day with you, I think I'd quietly choose this one."
