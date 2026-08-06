@@ -103,8 +103,9 @@ body: [
 signature: "— one of my favourite memories ❤️",
 image: "assets/images/20250625_135906.jpg",
 imageCaption: "a day I'll never forget"
+  },
   {
-},
+
     day: 7,
     type: "audio",
     audioSrc: "assets/audio/day-07-voice-note.mp3",
