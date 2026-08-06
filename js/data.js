@@ -110,9 +110,9 @@ imageCaption: "a day I'll never forget"
     day: 7,
    type: "gallery",
     images: [
-      { src: "assets/images/day-08-a.jpg", caption: "a Tuesday" },
-      { src: "assets/images/day-08-b.jpg", caption: "that trip" },
-      { src: "assets/images/day-08-c.jpg", caption: "your idea, obviously" }
+      { src: "assets/images/20260806_135048jpg", caption: "yummy food with my foodie" },
+      { src: "assets/images/20260806_133141.jpg", caption: "lost in your beauty" },
+      { src: "assets/images/20260803_112325.jpg", caption: "a beautiful coffee date with a beautiful girl" }
     ]
   },
   {
