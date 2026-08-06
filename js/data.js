@@ -108,18 +108,18 @@ imageCaption: "a day I'll never forget"
   {
 
     day: 7,
-    type: "audio",
-    audioSrc: "assets/audio/day-07-voice-note.mp3",
-    note: "A voice note, recorded at an hour I should've been asleep."
-  },
-  {
-    day: 8,
-    type: "gallery",
+   type: "gallery",
     images: [
       { src: "assets/images/day-08-a.jpg", caption: "a Tuesday" },
       { src: "assets/images/day-08-b.jpg", caption: "that trip" },
       { src: "assets/images/day-08-c.jpg", caption: "your idea, obviously" }
     ]
+  },
+  {
+    day: 8,
+        type: "audio",
+    audioSrc: "assets/audio/day-06-voice-note.mp3",
+    note: "A voice note, recorded at an hour I should've been asleep."
   },
   {
     day: 9,
