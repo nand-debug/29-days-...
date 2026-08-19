@@ -116,109 +116,122 @@ imageCaption: "a day I'll never forget"
     ]
   },
   {
-    day: 8,
-        type: "audio",
-    audioSrc: "assets/audio/day-06-voice-note.mp3",
-    note: "A voice note, recorded at an hour I should've been asleep."
-  },
-  {
-    day: 9,
-    type: "quote",
-    quote: "Home was never a place for me until it became a person.",
-    attribution: "Day Nine"
-  },
-  {
-    day: 10,
-    type: "letter",
-    title: "Ten Days",
-    body: [
-      "Double digits. I don't have anything clever to say today — just that ten days feels both impossibly long and much too short, depending on the hour."
-    ],
-    signature: "— counting, badly, on purpose"
-  },
-  {
-    day: 11,
-    type: "list",
-    intro: "Things you've taught me without meaning to:",
-    items: [
-      "Patience isn't the absence of frustration, it's choosing softness anyway.",
-      "Rest is not a reward you have to earn.",
-      "Saying the kind thing out loud costs nothing and changes everything."
-    ]
-  },
-  {
-    day: 12,
-    type: "photo",
-    image: "assets/images/day-12.jpg",
-    caption: "You, mid-laugh, not posing for anyone."
-  },
-  {
-    day: 13,
-    type: "video",
-    videoSrc: "assets/video/day-13-clip.mp4",
-    note: "Thirty seconds I've watched more times than I'll admit."
-  },
-  {
-    day: 14,
-    type: "letter",
-    title: "Halfway There",
-    body: [
-      "Fourteen down, fifteen to go. If this were a book, we'd be at the part where the reader stops being able to put it down.",
-      "I already know how this story keeps going. I just get to keep being surprised by how good it is."
-    ],
-    signature: "— still turning the pages"
-  },
-  {
-    day: 15,
-    type: "quote",
-    quote: "I used to think love was a feeling. You taught me it's closer to a decision, made quietly, every day.",
-    attribution: "Day Fifteen"
-  },
-  {
-    day: 16,
-    type: "mixed",
-    body: ["Some days the countdown is the whole plan — get through it, get closer to seeing you."],
-    signature: "— patience, rewarded",
-    image: "assets/images/day-16-insert.jpg",
-    imageCaption: "your favorite coat, worn out"
-  },
-  {
-    day: 17,
-    type: "audio",
-    audioSrc: "assets/audio/day-17-song.mp3",
-    note: "The song that made me think of you before I knew why."
-  },
-  {
-    day: 18,
-    type: "gallery",
-    images: [
-      { src: "assets/images/day-18-a.jpg", caption: "the good light" },
-      { src: "assets/images/day-18-b.jpg", caption: "unplanned, best kind" }
-    ]
-  },
-  {
-    day: 19,
-    type: "letter",
-    title: "An Ordinary Tuesday",
-    body: [
-      "Nothing remarkable happened today, which is exactly why I wanted to write it down. Some of my favorite memories of you are the unremarkable ones."
-    ],
-    signature: "— grateful for the boring days too"
-  },
-  {
-    day: 20,
-    type: "list",
-    intro: "Small things I noticed this week:",
-    items: [
-      "You still save the last bite for me without being asked.",
-      "You text me the second something reminds you of a memory.",
-      "You never let a disagreement turn into distance."
-    ]
-  },
+  day: 8,
+  type: "mixed",
+  body: [
+    "I could probably fill this whole website with reasons why I find you beautiful, but honestly, it's not just the way you look.",
+    "It's the way you care, the way you love, the way you get excited over little things, and the way you make me feel loved without even trying. That's the part of you I could never put into a photo."
+  ],
+  signature: "— beautiful in all the ways that matter ❤️",
+  image: "assets/images/day-08.jpg",
+  imageCaption: "just you, being you"
+},
+{
+  day: 9,
+  type: "quote",
+  quote: "If I had to choose my favourite place in the world, I don't think I'd choose a place at all. I'd choose wherever I get to sit beside you.",
+  attribution: "Day Nine"
+},
+{
+  day: 10,
+  type: "letter",
+  title: "Ten Days In",
+  body: [
+    "Ten days already. It's funny how I've spent so much time waiting for your birthday, but somehow I'm enjoying these little days just as much.",
+    "I hope you know that this isn't just a countdown to your birthday. It's twenty-nine little reminders of how much I love having you in my life."
+  ],
+  signature: "— and I'm not even halfway done loving you ❤️"
+},
+{
+  day: 11,
+  type: "list",
+  intro: "A few things I hope you never forget about yourself:",
+  items: [
+    "You are so much more beautiful than you realise, especially when you're not even trying.",
+    "Your kindness is one of the things I admire most about you.",
+    "Your smile can change my entire mood without you even knowing it.",
+    "You are loved more deeply than you probably realise."
+  ]
+},
+{
+  day: 12,
+  type: "photo",
+  image: "assets/images/day-12.jpg",
+  caption: "I don't think you realise how pretty you look when you're just being yourself."
+},
+{
+  day: 13,
+  type: "video",
+  videoSrc: "assets/video/day-13-clip.mp4",
+  note: "I could have kept this one to myself, but I wanted you to have a little piece of a memory that made me smile."
+},
+{
+  day: 14,
+  type: "letter",
+  title: "Halfway To You",
+  body: [
+    "Fourteen days. We're officially halfway there, and I honestly don't know where the time went.",
+    "I started this because I wanted to give you something every day before your birthday, but somewhere along the way I realised something... I really like having a reason to tell you how much I love you."
+  ],
+  signature: "— halfway there, still completely yours ❤️"
+},
+{
+  day: 15,
+  type: "quote",
+  quote: "I don't need a perfect life. I just want a life with you in it, filled with ordinary days that somehow become my favourite memories.",
+  attribution: "Day Fifteen"
+},
+{
+  day: 16,
+  type: "mixed",
+  body: [
+    "There are so many little things about you that I could write about forever, but sometimes I think my favourite thing is simply having you beside me.",
+    "Whether we're doing absolutely nothing or going somewhere together, somehow the day always feels better when you're there."
+  ],
+  signature: "— you make ordinary days feel special",
+  image: "assets/images/day-16-insert.jpg",
+  imageCaption: "one of those little memories I keep close"
+},
+{
+  day: 17,
+  type: "audio",
+  audioSrc: "assets/audio/day-17-song.mp3",
+  note: "I heard this and immediately thought of you. So naturally, you had to have it."
+},
+{
+  day: 18,
+  type: "gallery",
+  images: [
+    { src: "assets/images/day-18-a.jpg", caption: "one of my favourite versions of you" },
+    { src: "assets/images/day-18-b.jpg", caption: "a moment I wish I could go back to" },
+    { src: "assets/images/day-18-c.jpg", caption: "just you being you ❤️" }
+  ]
+},
+{
+  day: 19,
+  type: "letter",
+  title: "The Ordinary Days",
+  body: [
+    "I think some of my favourite memories with you are the ones that weren't supposed to be special.",
+    "Just sitting together, talking about random things, laughing at something stupid, getting food, or simply being around each other. Those little moments are the ones I find myself missing the most."
+  ],
+  signature: "— I think I'd choose the ordinary days with you every time"
+},
+{
+  day: 20,
+  type: "list",
+  intro: "Little things you do that I don't think you realise I notice:",
+  items: [
+    "The way you get genuinely excited when you know we're going to see each other.",
+    "The way your voice gets even softer when you're sleepy.",
+    "The way you care about me even when you have your own things going on.",
+    "The way you somehow make me feel loved without even having to say anything."
+  ]
+},
   {
     day: 21,
     type: "quote",
-    quote: "Twenty-one days from now, you'll be a year older and I'll be exactly as sure about you as I am tonight.",
+    quote: "eight days from now, you'll be a year older and I'll be exactly as sure about you as I am tonight.",
     attribution: "Day Twenty-One"
   },
   {
