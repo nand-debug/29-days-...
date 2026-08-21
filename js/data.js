@@ -123,7 +123,7 @@ imageCaption: "a day I'll never forget"
     "It's the way you care, the way you love, the way you get excited over little things, and the way you make me feel loved without even trying. That's the part of you I could never put into a photo."
   ],
   signature: "— beautiful in all the ways that matter ❤️",
-  image: "assets/images/day-08.jpg",
+  image: "assets/images/20250421_125606.jpg",
   imageCaption: "just you, being you"
 },
 {
@@ -148,7 +148,7 @@ imageCaption: "a day I'll never forget"
   intro: "A few things I hope you never forget about yourself:",
   items: [
     "You are so much more beautiful than you realise, especially when you're not even trying.",
-    "Your kindness is one of the things I admire most about you.",
+    "Your eyes is one of the things I admire most about you.",
     "Your smile can change my entire mood without you even knowing it.",
     "You are loved more deeply than you probably realise."
   ]
@@ -156,14 +156,19 @@ imageCaption: "a day I'll never forget"
 {
   day: 12,
   type: "photo",
-  image: "assets/images/day-12.jpg",
+  image: "assets/images/20250421_125606.jpg",
   caption: "I don't think you realise how pretty you look when you're just being yourself."
 },
 {
   day: 13,
-  type: "video",
-  videoSrc: "assets/video/day-13-clip.mp4",
-  note: "I could have kept this one to myself, but I wanted you to have a little piece of a memory that made me smile."
+  type: "letter",
+  title: "You Make It Easy",
+  body: [
+    "One thing I've realised about loving you is that it never feels complicated. Even when life isn't perfect, having you beside me makes it easier.",
+    "You make me feel cared for, understood and loved in a way that means more to me than I probably show.",
+    "I don't need a special reason to be grateful for you. I just am. Every day."
+  ],
+  signature: "— always grateful for you"
 },
 {
   day: 14,
@@ -189,22 +194,22 @@ imageCaption: "a day I'll never forget"
     "Whether we're doing absolutely nothing or going somewhere together, somehow the day always feels better when you're there."
   ],
   signature: "— you make ordinary days feel special",
-  image: "assets/images/day-16-insert.jpg",
+  image: "assets/images/20260810_130618.jpg",
   imageCaption: "one of those little memories I keep close"
 },
 {
   day: 17,
-  type: "audio",
-  audioSrc: "assets/audio/day-17-song.mp3",
-  note: "I heard this and immediately thought of you. So naturally, you had to have it."
+  type: "quote",
+  quote: "If you ever wonder how much you mean to me, look at how naturally I include you in every version of my future.",
+  attribution: "Day Seventeen"
 },
 {
   day: 18,
   type: "gallery",
   images: [
-    { src: "assets/images/day-18-a.jpg", caption: "one of my favourite versions of you" },
-    { src: "assets/images/day-18-b.jpg", caption: "a moment I wish I could go back to" },
-    { src: "assets/images/day-18-c.jpg", caption: "just you being you ❤️" }
+    { src: "assets/images/20260728_104847.jpg", caption: "one of my favourite versions of you" },
+    { src: "assets/images/20260812_132646.jpg", caption: "a moment I wish I could go back to" },
+    { src: "assets/images/Screenshot_20260411_160815_Viber.jpg", caption: "just you being you ❤️" }
   ]
 },
 {
@@ -237,7 +242,7 @@ imageCaption: "a day I'll never forget"
   {
     day: 22,
     type: "photo",
-    image: "assets/images/day-22.jpg",
+    image: "assets/images/Screenshot_20211202-201005_Gallery.jpg",
     caption: "One of the first photos I ever took of you. I still have the rest."
   },
   {
